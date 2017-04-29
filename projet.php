@@ -1,4 +1,9 @@
 <?php
+
+include_once "vue/header.html";
+include_once "vue/projet.html";
+include_once "vue/footer.html";
+
 /**
  * Created by PhpStorm.
  * User: thomas
