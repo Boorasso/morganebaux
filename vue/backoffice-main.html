@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="fr">
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width initial-scale=1">
+		<link rel="stylesheet" href="font-awesome/css/font-awesome.min.css">
+		<link href="https://fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet">
+		<link rel="stylesheet" type="text/css" href="css/reset.css">
+		<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+		<link rel="stylesheet" type="text/css" href="css/jquery.fancybox.css">
+		<link rel="stylesheet" type="text/css" href="css/main.css">
+		<title>Morgane Baux - Scénographe</title>
+	</head>
+	<body>
+		<div class="content">
+			<header>
+				<!-- Add proper home link -->
+				<a href="../index.php" class="logo">
+					<img src="img/shapeimage_10.png" alt="Morgane Baux - Scénographe">
+					<h1>Hi Morgane !<span class="linebreak">Back-office</span><span>.</span></h1>
+				</a>
+				<nav>
+					<!-- Add proper links -->
+					<div id="topnav">
+						<a href="home.html">Home</a>
+						<a href="categorie.html">Spect<span class="rouge">a</span>cle vivant</a>
+						<a href="#">Ciné an<span class="bleugris">i</span>mation/Maquettes</a>
+						<a href="#">E<span class="orange">x</span>po/événementiel</a>
+						<a href="#">Déc<span class="violet">o</span>ration</a>
+						<a href="#">Ima<span class="vert">g</span>es</a>
+					</div>
+					<div id="bottomnav">
+						<a href="actualite.html">Actualité</a>
+						<a href="contact.html">Contact/CV</a>
+						<p>copyright © Morgane Baux</p>
+					</div>
+				</nav>
+			</header><!--  
+		 --><main>
+		 		<form method="post" action="admin-main.php">
+		 			<h2>Ajouter un projet</h2>
+		 			<label for="titre">Titre :</label>
+		        	<input type="text" name="titre" id="titre" placeholder="Ex : La géopolitique vue par les dauphins" required />
+		        	<label for="poste">Poste :</label>
+		        	<input type="text" name="poste" id="poste" placeholder="Ex : Scénographie/Construction/Maquettes" required />
+		        	<label for="date">Date du projet :</label>
+		        	<input type="date" name="date" id="date">
+		        	<label for="article">Article :</label>
+		        	<textarea name="article" id="article" rows="18" required></textarea>
+		        	<label for="auteur">Catégories :</label>
+		        	<select name="categorie">
+						<?php foreach ($categories as $index => $ligne) :?>
+							<option value="<?=$categories[$index]['ID_cat'];?>"><?=$categories[$index]['nom'];?></option>
+						<?php endforeach; ?>
+					</select>
+					<input type="submit" value="Enregistrer" name="enregistrer" id="enregistrer">
+		 		</form>
+
+			</main>
+			<footer>
+				
+			</footer>
+		</div>
+	</body>
+</html>
