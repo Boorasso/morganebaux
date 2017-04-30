@@ -1,17 +1,24 @@
 <?php
 
 //1- Connexion base projets
+$bdd = new PDO('mysql:host=localhost;dbname=morganebaux;charset=utf8', 'root', 'admin', array(PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION));
+
 //2- Récupérer 3 derniers projets
-//3- Récupérer image des projets
-//4- Stocker dans des variables
-//5- Lancer le rendu des templates
+$query_projets = $bdd->prepare('SELECT projets.id_projet AS id_projet, projets.nom_projet AS nom_projet, images.url_img AS url_img
+                                FROM projets
+                                INNER JOIN images
+                                ON projets.id_projet = images.idprojet
+                                WHERE images.pos_img = 1
+                                ORDER BY projets.date_projet DESC
+                                LIMIT 0, 3');
+$query_projets->execute();
+$derniers_projets = $query_projets->fetchAll();
+$query_projets->closeCursor();
 
 
-
-
-
+//3- Lancer le rendu des templates
 include_once "vue/header.html";
-include_once "vue/home.html";
+include_once "vue/home.phtml";
 include_once "vue/footer.html";
 
 
