@@ -9,7 +9,7 @@ else {
 }
 
 //2- Connexion base de données
-$bdd = new PDO('mysql:host=localhost;dbname=morganebaux;charset=utf8', 'root', 'admin', array(PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION));
+include_once "model/connexion_bdd.php";
 
 //3- Récupération données
 $query_projet = $bdd->prepare('SELECT `nom_projet`, `poste`, `texte` 
