@@ -1,0 +1,22 @@
+<section id="projecttop">
+	<img src="vue/img/<?=$main_image_projet['url_img']; ?>" alt="<?=$main_image_projet['alt_img']; ?>"><!--
+--><article>
+		<h2 id="titreprojet"><?=$info_projet['nom_projet']; ?></h2>
+		<h6 id="poste"><?=$info_projet['poste']; ?></h6>
+		<pre id="texteprojet"><?=$info_projet['texte']; ?></pre>
+	</article>
+</section>
+<div id="separation">
+	<div class="line-separator"></div>
+	<a href="#mainsection">La suite <i class="fa fa-caret-down" aria-hidden="true"></i></a>
+	<div class="line-separator"></div>
+</div>
+<div class="wrapper">
+	<section id="mainsection"  class="grid">
+		<?php foreach ($images_projet as $image): ?>
+			<div class="col" style="background-image: url('vue/img/<?=$image['url_img']; ?>')">
+				<a href="vue/img/<?=$image['url_img']; ?>" data-fancybox="group" class="col-content"></a>
+			</div>
+		<?php endforeach ?>
+	</section>
+</div>
