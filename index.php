@@ -1,7 +1,8 @@
 <?php
 
 //1- Connexion base projets
-$bdd = new PDO('mysql:host=localhost;dbname=morganebaux;charset=utf8', 'root', 'admin', array(PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION));
+include_once "model/connexion_bdd.php";
+
 
 //2- Récupérer 3 derniers projets
 $query_projets = $bdd->prepare('SELECT projets.id_projet AS id_projet, projets.nom_projet AS nom_projet, images.url_img AS url_img
