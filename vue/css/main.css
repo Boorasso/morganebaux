@@ -14,10 +14,28 @@ a {
   text-decoration: none;
   display: block; }
 
-a:hover {
+a:hover, a.hover {
   font-weight: bold;
   color: inherit;
   text-decoration: none; }
+
+@keyframes showIt {
+  100% {
+    visibility: hidden; } }
+.tactile-fix:after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0; }
+
+.tactile-fix:hover {
+  transform: none; }
+
+.tactile-fix:hover:after {
+  animation: showIt 50ms forwards;
+  animation-delay: 50ms; }
 
 .rouge {
   color: #FF3D37; }
@@ -58,7 +76,7 @@ header {
       font-size: 2.5em;
       color: black;
       line-height: .1em; }
-  header a.logo:hover {
+  header a.logo:hover, header a.logo:focus {
     font-weight: normal; }
   header nav #topnav {
     margin-top: 85px; }
@@ -114,6 +132,10 @@ main {
 .col-3 {
   width: 100%; }
 
+.collink {
+  height: 100%;
+  width: 100%; }
+
 .colcontent {
   font-size: 16px;
   height: 100%;
@@ -136,18 +158,33 @@ main {
 
 a.col:hover p,
 a[class^="col-"]:hover p,
-a[class*=" col-"]:hover p {
+a[class*=" col-"]:hover p,
+a.col.hover p,
+a[class^="col-"].hover p,
+a[class*=" col-"].hover p,
+a.col:focus p,
+a[class^="col-"]:focus p,
+a[class*=" col-"]:focus p {
   display: initial; }
 a.col:hover .colcontent,
 a[class^="col-"]:hover .colcontent,
-a[class*=" col-"]:hover .colcontent {
+a[class*=" col-"]:hover .colcontent,
+a.col.hover .colcontent,
+a[class^="col-"].hover .colcontent,
+a[class*=" col-"].hover .colcontent,
+a.col:focus .colcontent,
+a[class^="col-"]:focus .colcontent,
+a[class*=" col-"]:focus .colcontent {
   background-color: rgba(255, 255, 255, 0.5);
   z-index: 100;
   box-shadow: none; }
 
 div.col > a:hover,
 div[class^="col-"] > a:hover,
-[class*=" col-"] > a:hover {
+[class*=" col-"] > a:hover,
+div.col > a:focus,
+div[class^="col-"] > a:focus,
+[class*=" col-"] > a:focus {
   background-color: rgba(255, 255, 255, 0.5);
   z-index: 100; }
 
@@ -288,27 +325,34 @@ form input[type="submit"] {
     position: relative;
     padding-bottom: 20px; }
     header nav {
-      display: none;
-      			/*a {
-      				font-size: .85em;
-      
-      			}
-      			#topnav, #bottomnav {
-      				margin: 0;
-      				padding: 15px;
-      				.mobile-hide {
-      					display: none;
-      				}
-      			}*/ }
+      display: none; }
 
   main {
     width: 100%;
     margin-left: 0; }
 
-  section#projecttop img {
-    display: block; }
+  #separation a {
+    margin: 25px; }
+
   section#projecttop article {
     display: block;
-    width: 100%; } }
+    width: 100%;
+    text-align: center; }
+    section#projecttop article h6#poste {
+      padding-bottom: 35px; }
+
+  .mobile-hide {
+    display: none !important; }
+
+  section#actualite {
+    margin: auto;
+    width: 80%; }
+    section#actualite img {
+      width: 100%; }
+
+  section#contact div#colonedroite, section#contact div#colonegauche {
+    display: block;
+    width: 100%;
+    padding-left: 10px; } }
 
 /*# sourceMappingURL=main.css.map */

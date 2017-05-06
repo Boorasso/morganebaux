@@ -1,12 +1,12 @@
 <section id="projecttop">
-	<img src="vue/img/<?=$main_image_projet['url_img']; ?>" alt="<?=$main_image_projet['alt_img']; ?>"><!--
+	<img src="vue/img/<?=$main_image_projet['url_img']; ?>" alt="<?=$main_image_projet['alt_img']; ?>" class="mobile-hide"><!--
 --><article>
 		<h2 id="titreprojet" style="color: #<?=$info_projet['couleur_titre']; ?>;"><?=$info_projet['nom_projet']; ?></h2>
 		<h6 id="poste"><?=$info_projet['poste']; ?></h6>
-		<pre id="texteprojet"><?=$info_projet['texte']; ?></pre>
+		<pre id="texteprojet" class="mobile-hide"><?=$info_projet['texte']; ?></pre>
 	</article>
 </section>
-<div id="separation">
+<div id="separation" class="mobile-hide">
 	<div class="line-separator"></div>
 	<a href="#mainsection">La suite <i class="fa fa-caret-down" aria-hidden="true"></i></a>
 	<div class="line-separator"></div>

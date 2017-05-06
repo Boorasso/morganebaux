@@ -39,12 +39,30 @@ a {
 	display: block;
 }
 
-a:hover {
+a:hover, a.hover {
 	font-weight: bold;
 	color: inherit;
 	text-decoration: none;
 }
 
+// -------------------------------------------------------
+//                TACTILE HOVER FIX
+// -------------------------------------------------------
+@keyframes showIt {
+	100% { visibility: hidden; }
+}
+.tactile-fix:after {
+	content: "";
+	position: absolute;
+	left: 0; right: 0; top: 0; bottom: 0;
+}
+.tactile-fix:hover {
+	transform: none;
+}
+.tactile-fix:hover:after {
+	animation: showIt 50ms forwards;
+	animation-delay: 50ms;
+}
 
 // -------------------------------------------------------
 //                     COULEURS SPANS
@@ -103,7 +121,7 @@ header {
 		}
 	}
 
-	a.logo:hover {
+	a.logo:hover, a.logo:focus {
 		font-weight: normal;
 	}
 
@@ -176,6 +194,10 @@ main {
 .col-3 {
 	width: 100%;
 }
+.collink {
+	height: 100%;
+	width: 100%;
+}
 .colcontent {
   font-size: 16px;
   height: 100%;
@@ -199,7 +221,13 @@ main {
 }
 a.col:hover,
 a[class^="col-"]:hover,
-a[class*=" col-"]:hover {
+a[class*=" col-"]:hover,
+a.col.hover,
+a[class^="col-"].hover,
+a[class*=" col-"].hover,
+a.col:focus,
+a[class^="col-"]:focus,
+a[class*=" col-"]:focus {
 	p {
 		display: initial;
 	}
@@ -212,7 +240,10 @@ a[class*=" col-"]:hover {
 
 div.col > a:hover,
 div[class^="col-"] > a:hover,
-[class*=" col-"] > a:hover {
+[class*=" col-"] > a:hover,
+div.col > a:focus,
+div[class^="col-"] > a:focus,
+[class*=" col-"] > a:focus {
 	background-color: rgba(255, 255, 255, .5);
 	z-index: 100;
 }
@@ -408,49 +439,44 @@ form {
 		justify-content: center;
 		position: relative;
 		padding-bottom: 20px;
-		//.logo {
-		//	width: 115px;
-		//	display: flex;
-		//	align-items: center;
-		//	flex-direction: column;
-		//	justify-content: center;
-		//	padding-bottom: 25px;
-		//	padding-left: 25px;
-		//	img {
-		//		width: 80px;
-		//		margin-right: 10px;
-		//	}
-		//	h1 {
-		//		font-size: .8em;
-		//		width: auto;
-		//	}
-		//}
 		nav {
 			display: none;
-			/*a {
-				font-size: .85em;
-
-			}
-			#topnav, #bottomnav {
-				margin: 0;
-				padding: 15px;
-				.mobile-hide {
-					display: none;
-				}
-			}*/
 		}
 	}
 	main {
 		width: 100%;
 		margin-left: 0;
 	}
+	#separation a {
+		margin: 25px;
+	}
 	section#projecttop {
-		img {
-			display: block;
-		}
 		article {
 			display: block;
 			width: 100%;
+			text-align: center;
+			h6#poste {
+				padding-bottom: 35px;
+			}
+		}
+	}
+	.mobile-hide {
+		display: none !important;
+	}
+	section#actualite {
+		margin: auto;
+		width: 80%;
+		img {
+			width: 100%;
+		}
+	}
+	section#contact {
+		div {
+			&#colonedroite, &#colonegauche {
+				display: block;
+				width: 100%;
+				padding-left: 10px;
+			}
 		}
 	}
 }
