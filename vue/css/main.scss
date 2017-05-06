@@ -407,6 +407,7 @@ form {
 		display: flex;
 		justify-content: center;
 		position: relative;
+		padding-bottom: 20px;
 		//.logo {
 		//	width: 115px;
 		//	display: flex;
@@ -442,5 +443,14 @@ form {
 	main {
 		width: 100%;
 		margin-left: 0;
+	}
+	section#projecttop {
+		img {
+			display: block;
+		}
+		article {
+			display: block;
+			width: 100%;
+		}
 	}
 }
