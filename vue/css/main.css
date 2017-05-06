@@ -88,7 +88,9 @@ main {
   flex-wrap: wrap;
   justify-content: flex-start; }
 
-.col {
+.col,
+[class^="col-"],
+[class*=" col-"] {
   display: flex;
   margin: 0;
   width: calc(100% / 3);
@@ -99,7 +101,20 @@ main {
   background-size: cover;
   background-position: center; }
 
-.col-content {
+[class^="col-"],
+[class*=" col-"] {
+  padding-bottom: calc(100% / 2.6); }
+
+.col-1 {
+  width: calc(100% / 3); }
+
+.col-2 {
+  width: calc(100% * 2 / 3); }
+
+.col-3 {
+  width: 100%; }
+
+.colcontent {
   font-size: 16px;
   height: 100%;
   width: 100%;
@@ -110,21 +125,29 @@ main {
   display: flex;
   align-items: center;
   text-align: center;
-  transition: all 0.3s; }
-  .col-content p {
+  transition: all 0.3s;
+  box-shadow: 0 0 5px #252525; }
+  .colcontent p {
     margin-left: auto;
     margin-right: auto;
     display: none;
     color: black;
     font-family: 'Andale Mono', 'Source Code Pro', monospace; }
 
-a.col:hover p {
+a.col:hover p,
+a[class^="col-"]:hover p,
+a[class*=" col-"]:hover p {
   display: initial; }
-a.col:hover .col-content {
+a.col:hover .colcontent,
+a[class^="col-"]:hover .colcontent,
+a[class*=" col-"]:hover .colcontent {
   background-color: rgba(255, 255, 255, 0.5);
-  z-index: 100; }
+  z-index: 100;
+  box-shadow: none; }
 
-div.col > a:hover {
+div.col > a:hover,
+div[class^="col-"] > a:hover,
+[class*=" col-"] > a:hover {
   background-color: rgba(255, 255, 255, 0.5);
   z-index: 100; }
 
@@ -253,5 +276,32 @@ form input[type="submit"] {
   text-align: center;
   margin: auto;
   margin-top: 10px; }
+
+@media all and (max-width: 768px) {
+  .content {
+    width: 95%; }
+
+  header {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    position: relative; }
+    header nav {
+      display: none;
+      			/*a {
+      				font-size: .85em;
+      
+      			}
+      			#topnav, #bottomnav {
+      				margin: 0;
+      				padding: 15px;
+      				.mobile-hide {
+      					display: none;
+      				}
+      			}*/ }
+
+  main {
+    width: 100%;
+    margin-left: 0; } }
 
 /*# sourceMappingURL=main.css.map */

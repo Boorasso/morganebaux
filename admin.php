@@ -1,5 +1,7 @@
 <?php
 
+$admin = true;
+
 include_once "vue/header.html";
 include_once "vue/admin.html";
 include_once "vue/footer.html";

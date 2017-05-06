@@ -1,7 +1,7 @@
 <section id="projecttop">
 	<img src="vue/img/<?=$main_image_projet['url_img']; ?>" alt="<?=$main_image_projet['alt_img']; ?>"><!--
 --><article>
-		<h2 id="titreprojet"><?=$info_projet['nom_projet']; ?></h2>
+		<h2 id="titreprojet" style="color: #<?=$info_projet['couleur_titre']; ?>;"><?=$info_projet['nom_projet']; ?></h2>
 		<h6 id="poste"><?=$info_projet['poste']; ?></h6>
 		<pre id="texteprojet"><?=$info_projet['texte']; ?></pre>
 	</article>
@@ -14,8 +14,8 @@
 <div class="wrapper">
 	<section id="mainsection"  class="grid">
 		<?php foreach ($images_projet as $image): ?>
-			<div class="col" style="background-image: url('vue/img/<?=$image['url_img']; ?>')">
-				<a href="vue/img/<?=$image['url_img']; ?>" data-fancybox="group" class="col-content"></a>
+			<div class="col-<?=$image['largeur_img'] ?>" style="background-image: url('vue/img/<?=$image['url_img']; ?>')">
+				<a href="vue/img/<?=$image['url_img']; ?>" data-fancybox="group" class="colcontent"></a>
 			</div>
 		<?php endforeach ?>
 	</section>

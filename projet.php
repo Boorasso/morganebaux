@@ -12,7 +12,7 @@ else {
 include_once "model/connexion_bdd.php";
 
 //3- Récupération données
-$query_projet = $bdd->prepare('SELECT `nom_projet`, `poste`, `texte` 
+$query_projet = $bdd->prepare('SELECT `nom_projet`, `poste`, `texte`, `couleur_titre`
                                FROM `projets`
                                WHERE `id_projet`= ?');
 $query_projet->execute(array($ref_projet));
@@ -28,7 +28,7 @@ $query_main_image->execute(array($ref_projet));
 $main_image_projet = $query_main_image->fetch();
 $query_main_image->closeCursor();
 //Images projet :
-$query_images = $bdd->prepare('SELECT `url_img` 
+$query_images = $bdd->prepare('SELECT `url_img`, images.largeur_img
                                FROM `images` 
                                WHERE `idprojet`= ? AND `pos_img` > 1 
                                ORDER BY `pos_img`');

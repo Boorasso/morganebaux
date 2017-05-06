@@ -150,7 +150,9 @@ main {
   flex-wrap: wrap;
   justify-content: flex-start;
 }
-.col {
+.col,
+[class^="col-"],
+[class*=" col-"] {
   display: flex;
   margin: 0;
   width: calc(100% / 3);
@@ -161,7 +163,20 @@ main {
   background-size: cover;
   background-position: center;
 }
-.col-content {
+[class^="col-"],
+[class*=" col-"] {
+	padding-bottom: calc(100% / 2.6);
+}
+.col-1 {
+	width: calc(100% / 3);
+}
+.col-2 {
+	width: calc(100% * 2 / 3);
+}
+.col-3 {
+	width: 100%;
+}
+.colcontent {
   font-size: 16px;
   height: 100%;
   width: 100%;
@@ -173,7 +188,8 @@ main {
   align-items: center;
   text-align: center;
   transition: all 0.3s;
-	p {
+  box-shadow: 0 0 5px #252525;
+  p {
   		margin-left: auto;
   		margin-right: auto;
   		display: none;
@@ -181,18 +197,22 @@ main {
   		font-family: 'Andale Mono', 'Source Code Pro', monospace;
 	}
 }
-
-a.col:hover {	
+a.col:hover,
+a[class^="col-"]:hover,
+a[class*=" col-"]:hover {
 	p {
 		display: initial;
 	}
-	.col-content {
+	.colcontent {
 		background-color: rgba(255, 255, 255, .5);
 		z-index: 100;
-	}
+        box-shadow: none;
+    }
 }
 
-div.col > a:hover {
+div.col > a:hover,
+div[class^="col-"] > a:hover,
+[class*=" col-"] > a:hover {
 	background-color: rgba(255, 255, 255, .5);
 	z-index: 100;
 }
@@ -201,7 +221,7 @@ div.col > a:hover {
 	display: flex;
 	justify-content: space-between;
 	align-items: center;
-	
+
 	a {
 		text-align: center;
 		text-transform: uppercase;
@@ -262,7 +282,7 @@ section#projecttop{
 			background-color: white;
 			border: none;
 			font-family:  'Verdana', sans-serif;
-		    em { 
+		    em {
 		    font-style: italic;
 			}
 		}
@@ -321,7 +341,7 @@ section#contact {
 		&.details::after {
 			content: ' : ';
 		}
-	}		
+	}
 	div#colonegauche {
 		vertical-align: top;
 		padding: 10px;
@@ -341,7 +361,7 @@ section#contact {
 				font-weight: normal;
 				color: black;
 			}
-		}		
+		}
 	}
 	div#colonedroite {
 		vertical-align: top;
@@ -372,5 +392,55 @@ form {
 		margin: auto;
 		margin-top: 10px;
 	}
-	
+}
+
+// -------------------------------------------------------
+//                    RESPONSIVE
+// -------------------------------------------------------
+
+@media all and (max-width: 768px) {
+	.content {
+		width: 95%;
+	}
+	header {
+		width: 100%;
+		display: flex;
+		justify-content: center;
+		position: relative;
+		//.logo {
+		//	width: 115px;
+		//	display: flex;
+		//	align-items: center;
+		//	flex-direction: column;
+		//	justify-content: center;
+		//	padding-bottom: 25px;
+		//	padding-left: 25px;
+		//	img {
+		//		width: 80px;
+		//		margin-right: 10px;
+		//	}
+		//	h1 {
+		//		font-size: .8em;
+		//		width: auto;
+		//	}
+		//}
+		nav {
+			display: none;
+			/*a {
+				font-size: .85em;
+
+			}
+			#topnav, #bottomnav {
+				margin: 0;
+				padding: 15px;
+				.mobile-hide {
+					display: none;
+				}
+			}*/
+		}
+	}
+	main {
+		width: 100%;
+		margin-left: 0;
+	}
 }
