@@ -51,6 +51,9 @@ a:hover, a.hover {
 @keyframes showIt {
 	100% { visibility: hidden; }
 }
+.tactile-fix {
+	position: relative;
+}
 .tactile-fix:after {
 	content: "";
 	position: absolute;
@@ -90,7 +93,6 @@ a:hover, a.hover {
 
 
 header {
-	padding-top: 10px;
 	display: inline-block;
 	width: 250px;
 	vertical-align: top;
@@ -100,9 +102,14 @@ header {
 		font-family: 'Andale Mono', 'Source Code Pro', monospace;
 		text-transform: uppercase;
 		display:block;
+		img {
+			width: 139px;
+		}
 	}
 
 	h1 {
+		position: relative;
+		top: -20px;
 		letter-spacing: 0;
 		width: 140px;
 		text-align: center;
@@ -126,6 +133,8 @@ header {
 	}
 
 	nav {
+		position: relative;
+		top: -20px;
 		#topnav {
 			margin-top: 85px;
 		}
@@ -191,8 +200,12 @@ main {
 .col-2 {
 	width: calc(100% * 2 / 3);
 }
-.col-3 {
+.col-3{
 	width: 100%;
+}
+.col-4 {
+	width: 100%;
+	padding-bottom: calc(100% / 1.8);
 }
 .collink {
 	height: 100%;
@@ -210,7 +223,6 @@ main {
   align-items: center;
   text-align: center;
   transition: all 0.3s;
-  box-shadow: 0 0 5px #252525;
   p {
   		margin-left: auto;
   		margin-right: auto;
@@ -234,7 +246,6 @@ a[class*=" col-"]:focus {
 	.colcontent {
 		background-color: rgba(255, 255, 255, .5);
 		z-index: 100;
-        box-shadow: none;
     }
 }
 
@@ -262,8 +273,8 @@ div[class^="col-"] > a:focus,
 }
 
 .line-separator{
-	height:1px;
-	border-bottom:1px dashed $basecolor;
+	height: 1px;
+	border-bottom: 2px dotted $basecolor;
 	width: 35%;
 	display: inline-block;
 }
@@ -478,5 +489,11 @@ form {
 				padding-left: 10px;
 			}
 		}
+	}
+}
+
+@media all and (max-width: 320px) {
+	.colcontent p {
+		letter-spacing: -2px;
 	}
 }

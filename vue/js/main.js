@@ -1,6 +1,6 @@
-$('a.col').on("touchstart", function (e) {
+$('a.col').on("touchend", function (e) {
     'use strict'; //satisfy code inspectors
-    var link = $(this); //preselect the link
+    var link = $(this).last(); //preselect the link
     if (link.hasClass('hover')) {
         return true;
     }
