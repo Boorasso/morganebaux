@@ -3,12 +3,32 @@
 // ===================== VARIABLES =======================
 // =======================================================
 
+// -------------------------------------------------------
+//                        COLORS
+// -------------------------------------------------------
+
 $basecolor: #424242;
 $rouge: #FF3D37;
 $bleugris: #75A87F;
 $orange: #FF8D64;
 $violet: #C0486A;
 $vert: #91B875;
+
+// -------------------------------------------------------
+//                       ANIMATIONS
+// -------------------------------------------------------
+
+@-webkit-keyframes fadein {
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes fadein {
+    to {
+        opacity: 1;
+    }
+}
 
 // =======================================================
 // ======================= STYLE =========================
@@ -33,9 +53,6 @@ body, a {
 	width: 92%;
 	max-width: 1200px;
 }
-
-
-
 
 a {
 	text-decoration: none;
@@ -187,6 +204,9 @@ main {
     background-size: cover;
     background-position: center;
     float: left;
+    opacity: 0;
+    -webkit-animation: fadein 1s 1s both;
+    animation: fadein 1s 1s both;
 }
 
 .col {
