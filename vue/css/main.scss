@@ -34,6 +34,9 @@ body, a {
 	max-width: 1200px;
 }
 
+
+
+
 a {
 	text-decoration: none;
 	display: block;
@@ -172,45 +175,76 @@ main {
 
 .wrapper { padding: 10px; }
 .grid {
-  margin: -15px;
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: flex-start;
+    margin: -15px;
+    //display: flex;
+    //flex-wrap: wrap;
+    //justify-content: flex-start;
 }
+
 .col,
 [class^="col-"],
 [class*=" col-"] {
-  display: flex;
-  margin: 0;
-  width: calc(100% / 3);
-  padding: 8px 8px calc(100% / 3) 8px;
-  border: 8px solid transparent;
-  background-clip: padding-box;
-  position: relative;
-  background-size: cover;
-  background-position: center;
+    background-size: cover;
+    background-position: center;
+    float: left;
 }
+
+.col {
+    position: relative;
+    width: 30%;
+    padding-bottom: 30%;
+    margin: 1.66%;
+
+}
+
 [class^="col-"],
 [class*=" col-"] {
-	padding-bottom: calc(100% / 2.6);
+    display: flex;
+    margin: 0;
+    width: calc(100% / 3);
+    padding: 8px 8px calc(100% / 2.6) 8px;
+    border: 8px solid transparent;
+    background-clip: padding-box;
+    position: relative;
 }
+
 .col-1 {
 	width: calc(100% / 3);
 }
+
 .col-2 {
-	width: calc(100% * 2 / 3);
+    width: calc(100% * 2 / 3);
 }
+
 .col-3{
 	width: 100%;
 }
+
 .col-4 {
 	width: 100%;
-	padding-bottom: calc(100% / 1.8);
+    padding-bottom: calc(100% / 1.8);
 }
+
+.col-5 {
+	width: 50%;
+	padding-bottom: 50%;
+}
+
+.col-6 {
+	width: 100%;
+	padding-bottom: 100%;
+}
+
+.col-7 {
+	width: 100%;
+	padding-bottom: calc(100% * 3/2);
+}
+
 .collink {
 	height: 100%;
 	width: 100%;
 }
+
 .colcontent {
   font-size: 16px;
   height: 100%;
@@ -231,6 +265,7 @@ main {
   		font-family: 'Andale Mono', 'Source Code Pro', monospace;
 	}
 }
+
 a.col:hover,
 a[class^="col-"]:hover,
 a[class*=" col-"]:hover,
@@ -494,6 +529,6 @@ form {
 
 @media all and (max-width: 320px) {
 	.colcontent p {
-		letter-spacing: -2px;
+		letter-spacing: -3px;
 	}
 }

@@ -110,27 +110,30 @@ main {
   padding: 10px; }
 
 .grid {
-  margin: -15px;
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: flex-start; }
+  margin: -15px; }
 
 .col,
+[class^="col-"],
+[class*=" col-"] {
+  background-size: cover;
+  background-position: center;
+  float: left; }
+
+.col {
+  position: relative;
+  width: 30%;
+  padding-bottom: 30%;
+  margin: 1.66%; }
+
 [class^="col-"],
 [class*=" col-"] {
   display: flex;
   margin: 0;
   width: calc(100% / 3);
-  padding: 8px 8px calc(100% / 3) 8px;
+  padding: 8px 8px calc(100% / 2.6) 8px;
   border: 8px solid transparent;
   background-clip: padding-box;
-  position: relative;
-  background-size: cover;
-  background-position: center; }
-
-[class^="col-"],
-[class*=" col-"] {
-  padding-bottom: calc(100% / 2.6); }
+  position: relative; }
 
 .col-1 {
   width: calc(100% / 3); }
@@ -144,6 +147,18 @@ main {
 .col-4 {
   width: 100%;
   padding-bottom: calc(100% / 1.8); }
+
+.col-5 {
+  width: 50%;
+  padding-bottom: 50%; }
+
+.col-6 {
+  width: 100%;
+  padding-bottom: 100%; }
+
+.col-7 {
+  width: 100%;
+  padding-bottom: calc(100% * 3/2); }
 
 .collink {
   height: 100%;
@@ -367,6 +382,6 @@ form input[type="submit"] {
     padding-left: 10px; } }
 @media all and (max-width: 320px) {
   .colcontent p {
-    letter-spacing: -2px; } }
+    letter-spacing: -3px; } }
 
 /*# sourceMappingURL=main.css.map */
