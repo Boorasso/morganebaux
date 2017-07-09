@@ -405,7 +405,97 @@ section#projecttop{
 	}
 }
 
-//Admin page only
+
+
+// -------------------------------------------------------
+//                       ACTUALITES
+// -------------------------------------------------------
+
+section#actualite {
+	max-width: 450px;
+	padding-top: 50px;
+
+	h2 {
+		text-transform: uppercase;
+		font-size: 1.5em;
+		color: black;
+	}
+	p {
+		text-align: justify;
+    	text-justify: inter-word;
+	}
+	span {
+		font-weight: bold;
+
+		&::before {
+			content: "- ";
+		}
+
+		&::after{
+			content: " : ";
+		}
+	}
+}
+
+// -------------------------------------------------------
+//                     CONTACT CV
+// -------------------------------------------------------
+
+section#contact {
+	h2 {
+		text-transform: uppercase;
+		font-size: 1.2em;
+		font-weight: bold;
+	}
+	p {
+		text-align: justify;
+    	text-justify: inter-word;
+	}
+	span {
+		font-weight: bold;
+		&.date::after {
+			content: ' - ';
+		}
+		&.details::after {
+			content: ' : ';
+		}
+	}
+	div#colonegauche {
+		vertical-align: top;
+		padding: 10px;
+		margin-top: -20px;
+		width: 40%;
+		display: inline-block;
+		img {
+			width: 100%;
+			padding-top: 20px;
+		}
+		a {
+			width:100%;
+			text-align: center;
+			padding-top: 5px;
+			text-decoration: underline;
+			&:hover {
+				font-weight: normal;
+				color: black;
+			}
+		}
+	}
+	div#colonedroite {
+		vertical-align: top;
+		padding: 10px 10px 10px 20px;
+		margin-top: -20px;
+		width: 60%;
+		display: inline-block;
+	}
+
+}
+
+// -------------------------------------------------------
+//                     BACK MAIN
+// -------------------------------------------------------
+
+//Admin page PROJECT
 
 .add-project, .add-image {
 	.colcontent {
@@ -528,111 +618,6 @@ section#projecttop{
 		width: 100%;
 	}
 	label:not(:first-child) {
-		margin-top: 10px;
-	}
-}
-
-// -------------------------------------------------------
-//                       ACTUALITES
-// -------------------------------------------------------
-
-section#actualite {
-	max-width: 450px;
-	padding-top: 50px;
-
-	h2 {
-		text-transform: uppercase;
-		font-size: 1.5em;
-		color: black;
-	}
-	p {
-		text-align: justify;
-    	text-justify: inter-word;
-	}
-	span {
-		font-weight: bold;
-
-		&::before {
-			content: "- ";
-		}
-
-		&::after{
-			content: " : ";
-		}
-	}
-}
-
-// -------------------------------------------------------
-//                     CONTACT CV
-// -------------------------------------------------------
-
-section#contact {
-	h2 {
-		text-transform: uppercase;
-		font-size: 1.2em;
-		font-weight: bold;
-	}
-	p {
-		text-align: justify;
-    	text-justify: inter-word;
-	}
-	span {
-		font-weight: bold;
-		&.date::after {
-			content: ' - ';
-		}
-		&.details::after {
-			content: ' : ';
-		}
-	}
-	div#colonegauche {
-		vertical-align: top;
-		padding: 10px;
-		margin-top: -20px;
-		width: 40%;
-		display: inline-block;
-		img {
-			width: 100%;
-			padding-top: 20px;
-		}
-		a {
-			width:100%;
-			text-align: center;
-			padding-top: 5px;
-			text-decoration: underline;
-			&:hover {
-				font-weight: normal;
-				color: black;
-			}
-		}
-	}
-	div#colonedroite {
-		vertical-align: top;
-		padding: 10px 10px 10px 20px;
-		margin-top: -20px;
-		width: 60%;
-		display: inline-block;
-	}
-
-}
-
-// -------------------------------------------------------
-//                     BACK MAIN
-// -------------------------------------------------------
-
-form {
-	h2 {
-		text-align: center;
-	}
-	label, input, textarea, select {
-		display: block;
-		width: 700px;
-		margin: auto;
-	}
-	input[type="submit"] {
-		width: 100px;
-		text-align: center;
-		margin: auto;
 		margin-top: 10px;
 	}
 }

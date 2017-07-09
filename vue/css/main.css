@@ -296,6 +296,60 @@ section#projecttop {
       section#projecttop article pre em {
         font-style: italic; }
 
+section#actualite {
+  max-width: 450px;
+  padding-top: 50px; }
+  section#actualite h2 {
+    text-transform: uppercase;
+    font-size: 1.5em;
+    color: black; }
+  section#actualite p {
+    text-align: justify;
+    text-justify: inter-word; }
+  section#actualite span {
+    font-weight: bold; }
+    section#actualite span::before {
+      content: "- "; }
+    section#actualite span::after {
+      content: " : "; }
+
+section#contact h2 {
+  text-transform: uppercase;
+  font-size: 1.2em;
+  font-weight: bold; }
+section#contact p {
+  text-align: justify;
+  text-justify: inter-word; }
+section#contact span {
+  font-weight: bold; }
+  section#contact span.date::after {
+    content: ' - '; }
+  section#contact span.details::after {
+    content: ' : '; }
+section#contact div#colonegauche {
+  vertical-align: top;
+  padding: 10px;
+  margin-top: -20px;
+  width: 40%;
+  display: inline-block; }
+  section#contact div#colonegauche img {
+    width: 100%;
+    padding-top: 20px; }
+  section#contact div#colonegauche a {
+    width: 100%;
+    text-align: center;
+    padding-top: 5px;
+    text-decoration: underline; }
+    section#contact div#colonegauche a:hover {
+      font-weight: normal;
+      color: black; }
+section#contact div#colonedroite {
+  vertical-align: top;
+  padding: 10px 10px 10px 20px;
+  margin-top: -20px;
+  width: 60%;
+  display: inline-block; }
+
 .add-project .colcontent, .add-image .colcontent {
   border: 3px dashed lightgrey; }
   .add-project .colcontent p, .add-image .colcontent p {
@@ -393,72 +447,6 @@ section#projecttop {
 .project-description-admin-view label, .project-description-admin-view input, .project-description-admin-view textarea {
   width: 100%; }
 .project-description-admin-view label:not(:first-child) {
-  margin-top: 10px; }
-
-section#actualite {
-  max-width: 450px;
-  padding-top: 50px; }
-  section#actualite h2 {
-    text-transform: uppercase;
-    font-size: 1.5em;
-    color: black; }
-  section#actualite p {
-    text-align: justify;
-    text-justify: inter-word; }
-  section#actualite span {
-    font-weight: bold; }
-    section#actualite span::before {
-      content: "- "; }
-    section#actualite span::after {
-      content: " : "; }
-
-section#contact h2 {
-  text-transform: uppercase;
-  font-size: 1.2em;
-  font-weight: bold; }
-section#contact p {
-  text-align: justify;
-  text-justify: inter-word; }
-section#contact span {
-  font-weight: bold; }
-  section#contact span.date::after {
-    content: ' - '; }
-  section#contact span.details::after {
-    content: ' : '; }
-section#contact div#colonegauche {
-  vertical-align: top;
-  padding: 10px;
-  margin-top: -20px;
-  width: 40%;
-  display: inline-block; }
-  section#contact div#colonegauche img {
-    width: 100%;
-    padding-top: 20px; }
-  section#contact div#colonegauche a {
-    width: 100%;
-    text-align: center;
-    padding-top: 5px;
-    text-decoration: underline; }
-    section#contact div#colonegauche a:hover {
-      font-weight: normal;
-      color: black; }
-section#contact div#colonedroite {
-  vertical-align: top;
-  padding: 10px 10px 10px 20px;
-  margin-top: -20px;
-  width: 60%;
-  display: inline-block; }
-
-form h2 {
-  text-align: center; }
-form label, form input, form textarea, form select {
-  display: block;
-  width: 700px;
-  margin: auto; }
-form input[type="submit"] {
-  width: 100px;
-  text-align: center;
-  margin: auto;
   margin-top: 10px; }
 
 @media all and (max-width: 768px) {

@@ -1,3 +1,7 @@
+<?php if ($login) : ?>
+<form action="save_project.php" method="post">
+<?php endif; ?>
+
 <section id="projecttop"><!--Section Project Top-->
 
 
@@ -75,13 +79,10 @@
 				<?php if ($login) : ?>
 					<div class="admin-icons">
 						<a href="#"><i class="fa fa-arrows-alt" aria-hidden="true"></i></a>
-                        <?php if ($image['pos_img'] > 2) : ?>
-						    <a href="#"><i class="fa fa-arrow-up" aria-hidden="true"></i></a>
-                        <?php endif; ?>
-                        <?php if ($image['pos_img'] != (count($images_projet)+1)) : ?>
-						    <a href="#"><i class="fa fa-arrow-down" aria-hidden="true"></i></a>
-                        <?php endif; ?>
-						<a href="#"><i class="fa fa-pencil" aria-hidden="true"></i></a>
+                        <a href="#" class="image-up <?php if ($image['pos_img'] == 2) {echo 'hidden';} ?>"><i class="fa fa-arrow-up" aria-hidden="true"></i></a>
+                        <a href="#" class="image-down <?php if ($image['pos_img'] == (count($images_projet)+1)) {echo 'hidden';} ?>"><i class="fa fa-arrow-down" aria-hidden="true"></i></a>
+                        <button onclick="$('#image_<?=$image["pos_img"]; ?>').click()"> <i class="fa fa-pencil" aria-hidden="true"></i> </button>
+                        <input type="file" name="image_<?=$image["pos_img"]; ?>" id="image_<?=$image["pos_img"]; ?>" class="image-input" style="display: none">
 						<a href="#"><i class="fa fa-times" aria-hidden="true"></i></a>
 					</div>
 				<?php endif; ?>
@@ -102,10 +103,11 @@
 			<button class="hide-buttons black-button">Cacher les options</button>
 		</div>
 		<div class="col-lg-4">
-			<button class="confirm-changes black-button">Enregistrer</button>
+			<button type="submit" class="confirm-changes black-button">Enregistrer</button>
 		</div>
 		<div class="col-lg-4">
 			<button class="delete-project black-button" data-project-id="">Supprimer ce projet</button>
 		</div>
 	</section>
+    </form>
 <?php endif; ?> <!--Admin only bottom buttons-->
