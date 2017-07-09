@@ -10,6 +10,7 @@
     <link rel="stylesheet" type="text/css" href="vue/css/jquery.fancybox.css">
     <link rel="stylesheet" type="text/css" href="vue/css/main.css">
     <title>Morgane Baux - Scénographe</title>
+    <script src="vendor/ckeditor/ckeditor.js"></script>
 </head>
 <body>
 <div class="content">
@@ -18,11 +19,17 @@
         <a href="index.php" class="logo">
             <img src="vue/img/morgane logo.svg" alt="Morgane Baux - Scénographe">
             <h1>Morgane Baux <span class="linebreak">Scénographie</span><span>.</span></h1>
+            <?php if ($login) : ?>
+                <p class="rouge">Espace administration</p>
+            <?php endif; ?>
         </a>
         <nav>
             <!-- Add proper links -->
             <div id="topnav">
                 <a href="index.php" class="mobile-hide">Home</a>
+                <?php if ($login) : ?>
+                    <a href="categorie.php?ref=all">Tous les projets</a>
+                <?php endif; ?>
                 <a href="categorie.php?ref=1">Spect<span class="rouge">a</span>cle vivant</a>
                 <a href="categorie.php?ref=2">Ciné an<span class="bleugris">i</span>mation/Maquettes</a>
                 <a href="categorie.php?ref=3">E<span class="orange">x</span>po/événementiel</a>

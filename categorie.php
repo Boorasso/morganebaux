@@ -1,5 +1,8 @@
 <?php
 
+require_once "model/conf.php";
+
+
 //1- Tester la variable reçu en GET
 //Tester la variable récupérée en GET !
 if (isset($_GET['ref'])){
@@ -37,9 +40,9 @@ else {
 }
 
 //4- Lancer le rendu des templates
-include_once "vue/header.html";
+include_once "vue/header.php";
 include_once "vue/categorie.phtml";
-include_once "vue/footer.html";
+include_once "vue/footer.php";
 
 /**
  * Created by PhpStorm.

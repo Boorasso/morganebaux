@@ -1,22 +1,111 @@
-<section id="projecttop">
-	<img src="vue/img/<?=$main_image_projet['url_img']; ?>" alt="<?=$main_image_projet['alt_img']; ?>" class="mobile-hide"><!--
---><article>
-		<h2 id="titreprojet" style="color: #<?=$info_projet['couleur_titre']; ?>;"><?=$info_projet['nom_projet']; ?></h2>
-		<h6 id="poste"><?=$info_projet['poste']; ?></h6>
-		<pre id="texteprojet" class="mobile-hide"><?=$info_projet['texte']; ?></pre>
-	</article>
-</section>
-<div id="separation" class="mobile-hide">
+<section id="projecttop"><!--Section Project Top-->
+
+
+	<?php if (!$login) : ?><!--	Affichage visiteurs	-->
+		<img src="vue/img/<?=$main_image_projet['url_img']; ?>" alt="<?=$main_image_projet['alt_img']; ?>" class="mobile-hide"><!--
+	--><article>
+			<h2 id="titreprojet" style="color: #<?=$info_projet['couleur_titre']; ?>;"><?=$info_projet['nom_projet']; ?></h2>
+			<h6 id="poste"><?=$info_projet['poste']; ?></h6>
+			<pre id="texteprojet" class="mobile-hide"><?=$info_projet['texte']; ?></pre>
+		</article>
+	<?php endif; ?><!--	Affichage visiteurs	-->
+
+
+	<?php if ($login) : ?><!--	Affichage admin-->
+
+        <!--Image Admin Display-->
+		<div class="img-admin-view" style="background-image: url('vue/img/<?=$main_image_projet['url_img']; ?>'">
+			<div class="admin-icons">
+				<button onclick="$('#image_1').click()"> <i class="fa fa-pencil" aria-hidden="true"></i> </button>
+				<input type="file" name="image_1" id="image_1" class="image-input" style="display: none">
+				<a href="#" class="tag_button"><i class="fa fa-tag" aria-hidden="true"></i></a>
+			</div>
+			<input type="text" id="alt_img" name="alt_img" class="image-alt-admin hidden" value="<?=$main_image_projet['alt_img']; ?>"/>
+		</div><!--
+
+	--><article class="project-description-admin-view">
+
+            <!-- Editing -->
+            <!--Nom du projet et couleur-->
+			<label for="nom_projet" class="input-description" data-id-projet="<?=$ref_projet;?>">Nom du projet</label>
+			<input type="text" class="title-input input-description" value="<?=$info_projet['nom_projet']; ?>" name="nom_projet" id="nom_projet">
+			<label for="couleur_titre" class="input-description">Couleur du titre (code hex)</label>
+			<input type="text" class="project-title-color-input input-description" value="<?=$info_projet['couleur_titre']; ?>" name="couleur_titre" id="couleur_titre">
+
+            <!--Poste-->
+			<label for="titre_poste" class="input-description">Poste</label>
+			<input type="text" class="poste-input input-description" value="<?=$info_projet['poste']; ?>" name="titre_poste" id="titre_poste">
+
+            <!--Texte et descriptif-->
+			<label for="texte" class="input-description">Description du projet</label>
+			<textarea name="texte" id="text"><?=$info_projet['texte']; ?></textarea>
+			<script>CKEDITOR.replace( 'text' );</script>
+
+		</article>
+
+		<article class="project-description-preview hidden"> <!--Preview-->
+			<h2 id="titreprojet" style="color: #<?=$info_projet['couleur_titre']; ?>;"><?=$info_projet['nom_projet']; ?></h2>
+			<h6 id="poste"><?=$info_projet['poste']; ?></h6>
+			<pre id="texteprojet" class="mobile-hide"><?=$info_projet['texte']; ?></pre>
+		</article> <!--Preview-->
+
+		<div class="button-center">
+			<button class="edit-description black-button">Preview</button>
+		</div>
+
+	<?php endif; ?><!--	Affichage admin-->
+
+
+</section><!--Section Project Top-->
+
+
+<div id="separation" class="mobile-hide"><!--Separation-->
 	<div class="line-separator"></div>
 	<a href="#mainsection">La suite <i class="fa fa-caret-down" aria-hidden="true"></i></a>
 	<div class="line-separator"></div>
-</div>
-<div class="wrapper">
+</div><!--Separation-->
+
+
+
+<div class="wrapper"> <!--Main Section-->
 	<section id="mainsection"  class="grid">
 		<?php foreach ($images_projet as $image): ?>
 			<div class="col-<?=$image['largeur_img'] ?>" style="background-image: url('vue/img/<?=$image['url_img']; ?>')">
 				<a href="vue/img/<?=$image['url_img']; ?>" data-fancybox="group" class="colcontent"></a>
+				<?php if ($login) : ?>
+					<div class="admin-icons">
+						<a href="#"><i class="fa fa-arrows-alt" aria-hidden="true"></i></a>
+                        <?php if ($image['pos_img'] > 2) : ?>
+						    <a href="#"><i class="fa fa-arrow-up" aria-hidden="true"></i></a>
+                        <?php endif; ?>
+                        <?php if ($image['pos_img'] != (count($images_projet)+1)) : ?>
+						    <a href="#"><i class="fa fa-arrow-down" aria-hidden="true"></i></a>
+                        <?php endif; ?>
+						<a href="#"><i class="fa fa-pencil" aria-hidden="true"></i></a>
+						<a href="#"><i class="fa fa-times" aria-hidden="true"></i></a>
+					</div>
+				<?php endif; ?>
 			</div>
 		<?php endforeach ?>
+		<div class="add-image">
+			<div class="colcontent" onclick="$('#image_new').click()"><p>+</p></div>
+			<input type="file" name="image_new" id="image_new" style="display: none">
+		</div>
+		<div class="clearfix"></div>
 	</section>
-</div>
+</div> <!--Main Section-->
+
+
+<?php if ($login) : ?> <!--Admin only bottom buttons-->
+	<section class="row button-center">
+		<div class="col-lg-4">
+			<button class="hide-buttons black-button">Cacher les options</button>
+		</div>
+		<div class="col-lg-4">
+			<button class="confirm-changes black-button">Enregistrer</button>
+		</div>
+		<div class="col-lg-4">
+			<button class="delete-project black-button" data-project-id="">Supprimer ce projet</button>
+		</div>
+	</section>
+<?php endif; ?> <!--Admin only bottom buttons-->

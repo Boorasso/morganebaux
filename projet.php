@@ -1,4 +1,7 @@
 <?php
+
+require_once "model/conf.php";
+
 //1- Récupérer ref projet en GET
 //Tester la variable récupérée en GET !
 if (isset($_GET['ref'])){
@@ -21,14 +24,15 @@ $query_projet->closeCursor();
 
 //4- Récupérer images projet
 //Image principale :
-$query_main_image = $bdd->prepare('SELECT `url_img`, `alt_img` 
+$query_main_image = $bdd->prepare('SELECT `url_img`, `alt_img`, `idimage`
                                    FROM `images` 
                                    WHERE `idprojet`= ? AND `pos_img` = 1');
 $query_main_image->execute(array($ref_projet));
 $main_image_projet = $query_main_image->fetch();
 $query_main_image->closeCursor();
+
 //Images projet :
-$query_images = $bdd->prepare('SELECT `url_img`, images.largeur_img
+$query_images = $bdd->prepare('SELECT `url_img`, images.largeur_img, images.pos_img
                                FROM `images` 
                                WHERE `idprojet`= ? AND `pos_img` > 1 
                                ORDER BY `pos_img`');
@@ -37,9 +41,9 @@ $images_projet = $query_images->fetchAll();
 $query_images->closeCursor();
 
 //6- Lancement du rendu du template
-include_once "vue/header.html";
+include_once "vue/header.php";
 include_once "vue/projet.phtml";
-include_once "vue/footer.html";
+include_once "vue/footer.php";
 
 /**
  * Created by PhpStorm.

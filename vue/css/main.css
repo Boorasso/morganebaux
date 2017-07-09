@@ -88,6 +88,8 @@ header {
       font-size: 2.5em;
       color: black;
       line-height: .1em; }
+  header h2 {
+    font-size: 1.1em; }
   header a.logo:hover, header a.logo:focus {
     font-weight: normal; }
   header nav {
@@ -119,8 +121,8 @@ main {
   margin: -15px; }
 
 .col,
-[class^="col-"],
-[class*=" col-"] {
+[class^="col-"]:not([class^="col-lg"]),
+[class*=" col-"]:not([class^="col-lg"]) {
   background-size: cover;
   background-position: center;
   float: left;
@@ -134,40 +136,47 @@ main {
   padding-bottom: 30%;
   margin: 1.66%; }
 
-[class^="col-"],
-[class*=" col-"] {
+[class^="col-"]:not([class^="col-lg"]),
+[class*=" col-"]:not([class^="col-lg"]) {
   display: flex;
-  margin: 0;
-  width: calc(100% / 3);
-  padding: 8px 8px calc(100% / 2.6) 8px;
-  border: 8px solid transparent;
   background-clip: padding-box;
   position: relative; }
 
 .col-1 {
-  width: calc(100% / 3); }
+  width: calc(100% / 3);
+  width: 30%;
+  padding-bottom: 41%;
+  margin: 1.66%; }
 
 .col-2 {
-  width: calc(100% * 2 / 3); }
+  width: calc(100% * 2 / 3);
+  width: 63.32%;
+  padding-bottom: 41%;
+  margin: 1.66%; }
 
 .col-3 {
-  width: 100%; }
+  width: 96.68%;
+  padding-bottom: 41%;
+  margin: 1.66%; }
 
 .col-4 {
-  width: 100%;
-  padding-bottom: calc(100% / 1.8); }
+  width: 96.68%;
+  padding-bottom: 64%;
+  margin: 1.66%; }
 
 .col-5 {
-  width: 50%;
-  padding-bottom: 50%; }
+  width: 46.68%;
+  padding-bottom: 46.68%;
+  margin: 1.66%; }
 
 .col-6 {
-  width: 100%;
-  padding-bottom: 100%; }
+  width: 96.68%;
+  padding-bottom: 96.68%;
+  margin: 1.66%; }
 
 .col-7 {
-  width: 100%;
-  padding-bottom: calc(100% * 3/2); }
+  width: 96.68%;
+  padding-bottom: 129.01%; }
 
 .collink {
   height: 100%;
@@ -182,10 +191,13 @@ main {
   overflow: hidden;
   position: absolute;
   display: flex;
+  flex-direction: column;
   align-items: center;
+  justify-content: center;
   text-align: center;
   transition: all 0.3s; }
   .colcontent p {
+    transition: color 0.3s;
     margin-left: auto;
     margin-right: auto;
     display: none;
@@ -226,7 +238,8 @@ div[class^="col-"] > a:focus,
 #separation {
   display: flex;
   justify-content: space-between;
-  align-items: center; }
+  align-items: center;
+  margin: 0 1.66%; }
   #separation a {
     text-align: center;
     text-transform: uppercase;
@@ -282,6 +295,105 @@ section#projecttop {
       font-family: 'Verdana', sans-serif; }
       section#projecttop article pre em {
         font-style: italic; }
+
+.add-project .colcontent, .add-image .colcontent {
+  border: 3px dashed lightgrey; }
+  .add-project .colcontent p, .add-image .colcontent p {
+    display: block;
+    font-size: 3em;
+    font-weight: bold;
+    color: lightgrey; }
+.add-project:hover .colcontent, .add-image:hover .colcontent {
+  border-color: grey; }
+  .add-project:hover .colcontent p, .add-image:hover .colcontent p {
+    color: grey; }
+
+.add-image {
+  display: flex;
+  background-clip: padding-box;
+  position: relative;
+  background-size: cover;
+  background-position: center;
+  float: left;
+  opacity: 0;
+  -webkit-animation: fadein 1s 1s both;
+  animation: fadein 1s 1s both;
+  width: 96.68%;
+  padding-bottom: 41%;
+  margin: 1.66%; }
+
+.admin-icons {
+  display: flex;
+  position: absolute;
+  padding: 15px;
+  flex-wrap: wrap; }
+  .admin-icons a, .admin-icons button {
+    height: 40px;
+    width: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 2em;
+    color: white;
+    background-color: black;
+    border-radius: 100%;
+    z-index: 101;
+    margin-left: 10px;
+    margin-bottom: 10px;
+    transition: all 1s ease-out;
+    border: none; }
+    .admin-icons a:hover, .admin-icons button:hover {
+      background-color: white;
+      color: black; }
+    .admin-icons a:focus, .admin-icons button:focus {
+      text-decoration: none;
+      outline: none; }
+
+.button-center {
+  text-align: center;
+  margin: 40px 0; }
+
+.black-button {
+  width: 100%;
+  margin: 10px auto;
+  padding: 10px 20px;
+  border: 3px solid black;
+  font-size: 1.2em;
+  color: white;
+  background-color: black;
+  font-family: 'Andale Mono', 'Source Code Pro', monospace; }
+  .black-button:hover {
+    color: red;
+    font-weight: bold;
+    background-color: white; }
+
+@media (min-width: 769px) {
+  .black-button {
+    width: auto; } }
+.img-admin-view {
+  padding-bottom: 41%;
+  width: 41%;
+  display: inline-block;
+  vertical-align: top;
+  position: relative;
+  margin: 1.5%;
+  background-size: cover;
+  background-position: center; }
+
+.image-alt-admin {
+  margin: 0;
+  color: black;
+  background-color: rgba(255, 255, 255, 0.5);
+  position: absolute;
+  bottom: 10px;
+  right: 10px;
+  border: 2px solid black;
+  padding: 5px; }
+
+.project-description-admin-view label, .project-description-admin-view input, .project-description-admin-view textarea {
+  width: 100%; }
+.project-description-admin-view label:not(:first-child) {
+  margin-top: 10px; }
 
 section#actualite {
   max-width: 450px;

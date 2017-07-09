@@ -1,3 +1,5 @@
+
+//Touch hover fix
 $('a.col').on("touchend", function (e) {
     'use strict'; //satisfy code inspectors
     var link = $(this).last(); //preselect the link

@@ -1,7 +1,10 @@
 <?php
 
+require_once "model/conf.php";
+
+
 //1- Connexion base projets
-include_once "model/connexion_bdd.php";
+require_once "model/connexion_bdd.php";
 
 
 //2- Récupérer 3 derniers projets
@@ -18,9 +21,9 @@ $query_projets->closeCursor();
 
 
 //3- Lancer le rendu des templates
-include_once "vue/header.html";
+include_once "vue/header.php";
 include_once "vue/home.phtml";
-include_once "vue/footer.html";
+include_once "vue/footer.php";
 
 
 /**

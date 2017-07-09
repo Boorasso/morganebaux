@@ -1,8 +1,9 @@
 <?php
 
-include_once "vue/header.html";
+require_once "model/conf.php";
+include_once "vue/header.php";
 include_once "vue/contact.html";
-include_once "vue/footer.html";
+include_once "vue/footer.php";
 
 /**
  * Created by PhpStorm.
