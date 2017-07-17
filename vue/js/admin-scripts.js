@@ -53,8 +53,6 @@ function readURL(input, targetDiv, targetLink) {
 
     targetLink = targetLink || 0;
 
-    console.log(targetLink);
-
     if (input.files && input.files[0]) {
         var reader = new FileReader();
 
@@ -69,15 +67,25 @@ function readURL(input, targetDiv, targetLink) {
     }
 }
 
+function returnURL(input) {
+    console.log("function returnURL");
+
+    if (input.files && input.files[0]) {
+        var reader = new FileReader();
+
+        reader.readAsDataURL(input.files[0]);
+
+        reader.onload = function (e) {
+            return e.target.result;
+        }
+    }
+}
+
 function  toggleUpAndDownButtons(element) {
 
     var allImages = $('#mainsection').find("div[class^=col-]"),
         firstElement = allImages[0],
         lastElement = allImages[((allImages.length)-1)];
-
-    console.log(element);
-    console.log(lastElement);
-    console.log(element.is(lastElement));
 
     if (element.is(firstElement)) {
         element.find('.image-up').addClass("hidden");
@@ -145,10 +153,36 @@ $(document).ready(function() {
     });
 
     //IMAGE PREVIEW
-    $(".image-input").change(function(){
+    $(".image-input").change(function() {
         var target = $(this).parent().parent();
         var targetLink = $(this).parent().parent().find(".colcontent");
         readURL(this, target, targetLink);
+    });
+
+    //ADD IMAGE
+    $('#image_new').change(function() {
+        var allImages = $('#mainsection').find("div[class^=col-]"),
+            lastElementNumber = ((allImages.length)+1),
+            newImageNumber = lastElementNumber + 1,
+            newImageTempURL = readURL($(this)),
+            newImage = "<div class='col-4' style='background-image: url('" + newImageTempURL + "')'>"+
+                            "<a href='" + newImageTempURL + "' data-fancybox='group' class='colcontent'></a>"+
+                                "<div class='admin-icons'>"+
+                                    "<a href='#'><i class='fa fa-arrows-alt' aria-hidden='true'></i></a>"+
+                                    "<a href=#' class='image-up'><i class='fa fa-arrow-up' aria-hidden='true'></i></a>"+
+                                    "<a href=#' class='image-down hidden'><i class='fa fa-arrow-down' aria-hidden='true'></i></a>"+
+                                    "<button onclick='$('#image_" + newImageNumber + "').click()'> <i class='fa fa-pencil' aria-hidden='true'></i> </button>"+
+                                    "<input type='file' name='image_" + newImageNumber + "' id='image_" + newImageNumber + "' class='image-input' style='display: none'>"+
+                                    "<a href='#'><i class='fa fa-times' aria-hidden='true'></i></a>"+
+                                "</div>"+
+                            "<?php endif; ?>"+
+                        "</div>";
+
+        console.log(newImageTempURL);
+        console.log($(this));
+        console.log($(this).parent());
+
+        $(this).parent().before(newImage);
     });
 
     //IMAGE UP
@@ -178,6 +212,8 @@ $(document).ready(function() {
         toggleUpAndDownButtons(movingDOWN);
 
     });
+
+
 
     //DATA GETTER (objet projet)
     getProject();
