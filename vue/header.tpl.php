@@ -6,6 +6,7 @@
     <link rel="stylesheet" href="vue/font-awesome/css/font-awesome.min.css">
     <link href="https://fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="vue/css/reset.css">
+    <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
     <link rel="stylesheet" type="text/css" href="vue/css/bootstrap.min.css">
     <link rel="stylesheet" type="text/css" href="vue/css/jquery.fancybox.css">
     <link rel="stylesheet" type="text/css" href="vue/css/main.css">
@@ -27,9 +28,6 @@
             <!-- Add proper links -->
             <div id="topnav">
                 <a href="index.php" class="mobile-hide">Home</a>
-                <?php if ($login) : ?>
-                    <a href="categorie.php?ref=all">Tous les projets</a>
-                <?php endif; ?>
                 <a href="categorie.php?ref=1">Spect<span class="rouge">a</span>cle vivant</a>
                 <a href="categorie.php?ref=2">Ciné an<span class="bleugris">i</span>mation/Maquettes</a>
                 <a href="categorie.php?ref=3">E<span class="orange">x</span>po/événementiel</a>

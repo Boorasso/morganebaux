@@ -15,7 +15,7 @@ else {
 include_once "model/connexion_bdd.php";
 
 //3- Récupération données
-$query_projet = $bdd->prepare('SELECT `nom_projet`, `poste`, `texte`, `couleur_titre`
+$query_projet = $bdd->prepare('SELECT `nom_projet`, `poste`, `texte`, `couleur_titre`, date_projet
                                FROM `projets`
                                WHERE `id_projet`= ?');
 $query_projet->execute(array($ref_projet));
@@ -41,13 +41,11 @@ $images_projet = $query_images->fetchAll();
 $query_images->closeCursor();
 
 //6- Lancement du rendu du template
-include_once "vue/header.php";
-include_once "vue/projet.phtml";
-include_once "vue/footer.php";
-
-/**
- * Created by PhpStorm.
- * User: thomas
- * Date: 29/04/2017
- * Time: 17:18
- */
+include_once "vue/header.tpl.php";
+if ($login) {
+    include_once "vue/admin_projet.tpl.php";
+}
+else {
+    include_once "vue/projet.tpl.php";
+}
+include_once "vue/footer.tpl.php";

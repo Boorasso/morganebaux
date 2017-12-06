@@ -40,9 +40,9 @@ else {
 }
 
 //4- Lancer le rendu des templates
-include_once "vue/header.php";
-include_once "vue/categorie.phtml";
-include_once "vue/footer.php";
+include_once "vue/header.tpl.php";
+include_once "vue/categorie.tpl.php";
+include_once "vue/footer.tpl.php";
 
 /**
  * Created by PhpStorm.

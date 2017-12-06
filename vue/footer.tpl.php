@@ -4,6 +4,7 @@
     <script src="vue/js/jquery.fancybox.min.js"></script>
     <script src="vue/js/main.js"></script>
     <?php if ($login) : ?>
+        <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
         <script src="vue/js/admin-scripts.js"></script>
     <?php endif; ?>
 </footer>
