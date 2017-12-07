@@ -136,7 +136,7 @@ header {
 		font-size: 1.1em;
 		line-height: 1.4em;
 		margin-top: 0;
-		
+
 		span {
 			display: block;
 		}
@@ -317,7 +317,7 @@ a[class*=" col-"]:focus {
 		display: initial;
 	}
 	.colcontent {
-		background-color: rgba(255, 255, 255, .5);
+		background-color: rgba(255, 255, 255, .7);
 		z-index: 100;
     }
 }
@@ -605,7 +605,7 @@ section#contact {
 .image-alt-admin {
 	margin: 0;
 	color: black;
-	background-color: rgba(255, 255, 255, .5);
+	background-color: rgba(255, 255, 255, .7);
 	position: absolute;
 	bottom: 10px;
 	right: 10px;
