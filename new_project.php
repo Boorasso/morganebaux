@@ -19,7 +19,10 @@ $query_projet->execute(array());
 //3 - Récupérer l'id du nouveau projet
 $ref_projet = $bdd->lastInsertId();
 
-//4 - Afficher la page d'édition
+//4 - Variable de titre
+$page_title = "Nouveau projet";
+
+//5 - Afficher la page d'édition
 include_once "vue/header.tpl.php";
 include_once "vue/admin_projet.tpl.php";
 include_once "vue/footer.tpl.php";

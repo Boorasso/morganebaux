@@ -1,6 +1,10 @@
 <?php
 
 require_once "model/conf.php";
+
+//Variable titre
+$page_title = "Actualités";
+
 include_once "vue/header.tpl.php";
 include_once "vue/actualite.html";
 include_once "vue/footer.tpl.php";

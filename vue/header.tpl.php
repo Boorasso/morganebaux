@@ -3,6 +3,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width initial-scale=1">
+    <link rel="icon" type="image/png" href="vue/img/morgane logo.svg" />
     <link rel="stylesheet" href="vendor/font-awesome/css/font-awesome.min.css">
     <link href="https://fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="vue/css/reset.css">
@@ -10,7 +11,7 @@
     <link rel="stylesheet" type="text/css" href="vue/css/bootstrap.min.css">
     <link rel="stylesheet" type="text/css" href="vue/css/jquery.fancybox.css">
     <link rel="stylesheet" type="text/css" href="vue/css/main.css">
-    <title>Morgane Baux - Scénographe</title>
+    <title>Morgane Baux | <?php echo $page_title; ?></title>
     <script src="vendor/ckeditor/ckeditor.js"></script>
 </head>
 <body>
