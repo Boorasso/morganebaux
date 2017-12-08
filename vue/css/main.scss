@@ -59,7 +59,7 @@ a {
 	display: block;
 }
 
-a:hover, a.hover {
+a:hover, a.hover, a:focus {
 	font-weight: bold;
 	color: inherit;
 	text-decoration: none;
