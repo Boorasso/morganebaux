@@ -228,10 +228,7 @@ a[class*=" col-"]:focus .colcontent {
 
 div.col > a:hover,
 div[class^="col-"] > a:hover,
-[class*=" col-"] > a:hover,
-div.col > a:focus,
-div[class^="col-"] > a:focus,
-[class*=" col-"] > a:focus {
+[class*=" col-"] > a:hover {
   background-color: rgba(255, 255, 255, 0.5);
   z-index: 100; }
 
