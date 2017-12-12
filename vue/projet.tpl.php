@@ -19,6 +19,13 @@
 
 <div class="wrapper"> <!--Main Section-->
 	<section id="mainsection"  class="grid">
+		<?php if ($ref_projet == 31) :?>
+			<div class="colvid">
+				<div class="aspect-ratio">
+					<iframe src="https://www.youtube.com/embed/W94DL9pMe5Q" frameborder="0" gesture="media" allow="encrypted-media" allowfullscreen></iframe>
+				</div>
+			</div>
+		<?php endif; ?>
 		<?php foreach ($images_projet as $image): ?>
 			<div class="col-<?=$image['largeur_img'] ?>" style="background-image: url('vue/img/<?=$image['url_img']; ?>')" data-img-pos="<?=$image["pos_img"]; ?>" data-img-count="<?=(count($images_projet)+1); ?>">
 				<a href="vue/img/<?=$image['url_img']; ?>" data-fancybox="group" class="colcontent"></a>
