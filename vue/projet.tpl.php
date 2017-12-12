@@ -28,7 +28,7 @@
 		<?php endif; ?>
 		<?php foreach ($images_projet as $image): ?>
 			<div class="col-<?=$image['largeur_img'] ?>" style="background-image: url('vue/img/<?=$image['url_img']; ?>')" data-img-pos="<?=$image["pos_img"]; ?>" data-img-count="<?=(count($images_projet)+1); ?>">
-				<a href="vue/img/<?=$image['url_img']; ?>" data-fancybox="group" class="colcontent"></a>
+				<a href="vue/img/<?=$image['url_img']; ?>" data-fancybox="group" class="colcontent" title="<?=$image['alt_img'];?>"></a>
 			</div>
 		<?php endforeach ?>
 		<div class="clearfix"></div>

@@ -33,7 +33,7 @@ $main_image_projet = $query_main_image->fetch();
 $query_main_image->closeCursor();
 
 //Images projet :
-$query_images = $bdd->prepare('SELECT `url_img`, images.largeur_img, images.pos_img
+$query_images = $bdd->prepare('SELECT `url_img`, images.largeur_img, images.pos_img, images.alt_img
                                FROM `images`
                                WHERE `idprojet`= ? AND `pos_img` > 1
                                ORDER BY `pos_img`');
