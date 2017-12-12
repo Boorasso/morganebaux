@@ -19,11 +19,9 @@ body, a {
 a {
   text-decoration: none;
   display: block; }
-
-a:hover, a.hover, a:focus {
-  font-weight: bold;
-  color: inherit;
-  text-decoration: none; }
+  a:hover, a.hover, a:focus {
+    color: inherit;
+    text-decoration: none; }
 
 iframe {
   width: 100%; }
@@ -74,6 +72,8 @@ header {
     font-family: 'Andale Mono', 'Source Code Pro', monospace;
     text-transform: uppercase;
     display: block; }
+    header a:hover, header a.hover, header a:focus {
+      font-weight: bold; }
     header a img {
       width: 139px; }
   header h1 {
@@ -116,13 +116,19 @@ main {
   margin-bottom: 35px;
   margin-left: 250px;
   padding-top: 20px; }
+  main a {
+    font-weight: bold; }
+    main a:hover, main a.hover, main a:focus {
+      opacity: .7; }
+
+#mainsection {
+  margin-bottom: 20px; }
 
 .wrapper {
   padding: 10px; }
 
 .grid {
-  margin: -15px;
-  margin-bottom: 20px; }
+  margin: -15px; }
 
 .col,
 [class^="col-"]:not([class^="col-lg"]),
@@ -273,19 +279,19 @@ div[class^="col-"] > a:hover,
   display: inline-block; }
 
 section#projecttop {
-  margin: 0 0 -20px 0; }
+  margin: 10px; }
   section#projecttop img {
     width: 45%;
     display: inline-block;
     vertical-align: top;
-    padding: 1.5%; }
+    padding-right: 1.5%; }
   section#projecttop pre {
     text-align: justify;
     text-justify: inter-word; }
   section#projecttop article {
     width: 55%;
     display: inline-block;
-    padding: 1.5%; }
+    padding-left: 1.5%; }
     section#projecttop article h2#titreprojet {
       text-transform: uppercase;
       font-size: 1.2em;
