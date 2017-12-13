@@ -5,7 +5,6 @@ require_once "model/conf.php";
 //1- Récupérer ref projet en GET
 //Tester la variable récupérée en GET !
 if (isset($_GET['ref'])){
-    //TODO filtrer la variable récupérée en GET !
     $ref_projet = filter_input(INPUT_GET, 'ref');
 }
 else {
@@ -33,7 +32,7 @@ $main_image_projet = $query_main_image->fetch();
 $query_main_image->closeCursor();
 
 //Images projet :
-$query_images = $bdd->prepare('SELECT `url_img`, images.largeur_img, images.pos_img, images.alt_img
+$query_images = $bdd->prepare('SELECT `url_img`, images.largeur_img, images.pos_img, images.alt_img, images.idimage
                                FROM `images`
                                WHERE `idprojet`= ? AND `pos_img` > 1
                                ORDER BY `pos_img`');
@@ -49,10 +48,5 @@ if ($login) {
 
 //6- Lancement du rendu du template
 include_once "vue/header.tpl.php";
-if ($login) {
-    include_once "vue/admin_projet.tpl.php";
-}
-else {
-    include_once "vue/projet.tpl.php";
-}
+include_once "vue/newprojecttemplate.tpl.php";
 include_once "vue/footer.tpl.php";

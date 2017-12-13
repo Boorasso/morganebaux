@@ -5,7 +5,6 @@ require_once "model/conf.php";
 
 //1- Tester la variable reçu en GET
 if (isset($_GET['ref'])){
-    //TODO filtrer la variable récupérée en GET !
     $ref_cat = filter_input(INPUT_GET, 'ref');
 }
 else {
