@@ -48,5 +48,5 @@ if ($login) {
 
 //6- Lancement du rendu du template
 include_once "vue/header.tpl.php";
-include_once "vue/newprojecttemplate.tpl.php";
+include_once "vue/projet.tpl.php";
 include_once "vue/footer.tpl.php";
