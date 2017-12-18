@@ -1,0 +1,26 @@
+1- Page project editor
+  A- Layout
+    a.1- Mise en forme champs alt
+
+  B- Fonctionnalités
+    b.1- Mise en place script taille image
+    b.2- Mise en place script show/hide alt
+    b.3- Mise en place appel AJAX pour update images
+    b.4- Mise en place appel AJAX pour update infos projet
+
+  C- Back
+
+
+2- Session user
+
+
+3- Pages Contact et Actu / CV
+  A- Création tables bdd
+  B- Création templates
+
+
+4- Front page
+  A- Modifs version mobiles/tablettes
+
+5- Référencement
+  A- meta content 
