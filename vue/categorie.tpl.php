@@ -1,7 +1,7 @@
 <div class="wrapper">
 	<section id="mainsection"  class="grid">
-		<?php if ($login) : ?>
-			<a href="#"  class="col add-project">
+		<?php if ($login && $category_exists) : ?>
+			<a href="new_project.php"  class="col add-project">
 				<div class="colcontent"><p>+</p></div>
 			</a>
 		<?php endif; ?>

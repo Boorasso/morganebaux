@@ -19,11 +19,12 @@ body, a {
 a {
   text-decoration: none;
   display: block; }
+  a:hover, a.hover, a:focus {
+    color: inherit;
+    text-decoration: none; }
 
-a:hover, a.hover {
-  font-weight: bold;
-  color: inherit;
-  text-decoration: none; }
+iframe {
+  width: 100%; }
 
 @keyframes showIt {
   100% {
@@ -71,6 +72,8 @@ header {
     font-family: 'Andale Mono', 'Source Code Pro', monospace;
     text-transform: uppercase;
     display: block; }
+    header a:hover, header a.hover, header a:focus {
+      font-weight: bold; }
     header a img {
       width: 139px; }
   header h1 {
@@ -113,6 +116,13 @@ main {
   margin-bottom: 35px;
   margin-left: 250px;
   padding-top: 20px; }
+  main a {
+    font-weight: bold; }
+    main a:hover, main a.hover, main a:focus {
+      opacity: .7; }
+
+#mainsection {
+  margin-bottom: 20px; }
 
 .wrapper {
   padding: 10px; }
@@ -182,6 +192,21 @@ main {
   height: 100%;
   width: 100%; }
 
+.colvid {
+  width: 96.68%;
+  margin: 1.66%; }
+  .colvid .aspect-ratio {
+    position: relative;
+    width: 100%;
+    height: 0;
+    padding-bottom: 51%; }
+    .colvid .aspect-ratio iframe {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      left: 0;
+      top: 0; }
+
 .colcontent {
   font-size: 16px;
   height: 100%;
@@ -202,7 +227,11 @@ main {
     margin-right: auto;
     display: none;
     color: black;
-    font-family: 'Andale Mono', 'Source Code Pro', monospace; }
+    font-family: 'Andale Mono', 'Source Code Pro', monospace;
+    letter-spacing: -2px; }
+    @media (min-width: 668px) {
+      .colcontent p {
+        letter-spacing: 0; } }
 
 a.col:hover p,
 a[class^="col-"]:hover p,
@@ -223,15 +252,12 @@ a[class*=" col-"].hover .colcontent,
 a.col:focus .colcontent,
 a[class^="col-"]:focus .colcontent,
 a[class*=" col-"]:focus .colcontent {
-  background-color: rgba(255, 255, 255, 0.5);
+  background-color: rgba(255, 255, 255, 0.7);
   z-index: 100; }
 
 div.col > a:hover,
 div[class^="col-"] > a:hover,
-[class*=" col-"] > a:hover,
-div.col > a:focus,
-div[class^="col-"] > a:focus,
-[class*=" col-"] > a:focus {
+[class*=" col-"] > a:hover {
   background-color: rgba(255, 255, 255, 0.5);
   z-index: 100; }
 
@@ -253,19 +279,19 @@ div[class^="col-"] > a:focus,
   display: inline-block; }
 
 section#projecttop {
-  margin: 0 0 -20px 0; }
+  margin: 10px; }
   section#projecttop img {
     width: 45%;
     display: inline-block;
     vertical-align: top;
-    padding: 1.5%; }
+    padding-right: 1.5%; }
   section#projecttop pre {
     text-align: justify;
     text-justify: inter-word; }
   section#projecttop article {
     width: 55%;
     display: inline-block;
-    padding: 1.5%; }
+    padding-left: 1.5%; }
     section#projecttop article h2#titreprojet {
       text-transform: uppercase;
       font-size: 1.2em;
@@ -437,7 +463,7 @@ section#contact div#colonedroite {
 .image-alt-admin {
   margin: 0;
   color: black;
-  background-color: rgba(255, 255, 255, 0.5);
+  background-color: rgba(255, 255, 255, 0.7);
   position: absolute;
   bottom: 10px;
   right: 10px;

@@ -19,11 +19,13 @@ $query_projets->execute();
 $derniers_projets = $query_projets->fetchAll();
 $query_projets->closeCursor();
 
+//3- Variable titre
+$page_title = "Scénographe";
 
-//3- Lancer le rendu des templates
-include_once "vue/header.php";
-include_once "vue/home.phtml";
-include_once "vue/footer.php";
+//4- Lancer le rendu des templates
+include_once "vue/header.tpl.php";
+include_once "vue/home.tpl.php";
+include_once "vue/footer.tpl.php";
 
 
 /**

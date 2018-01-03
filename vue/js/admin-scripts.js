@@ -149,7 +149,7 @@ $(document).ready(function() {
         }
 
         $('.project-description-admin-view').toggleClass('hidden');
-        $('.project-description-preview').toggleClass('hidden');
+        $('.project-description').toggleClass('hidden');
     });
 
     //IMAGE PREVIEW
