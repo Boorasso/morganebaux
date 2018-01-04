@@ -103,9 +103,8 @@
             <button class="change-image" onclick="$('#image_<?=$image["pos_img"]; ?>').click()"> <i class="fa fa-file-image-o" aria-hidden="true"></i> </button>
             <input type="file" name="image_<?=$image["pos_img"]; ?>" id="image_<?=$image["pos_img"]; ?>" class="image-input" style="display: none">
             <a href="#" class="delete-image"><i class="fa fa-trash" aria-hidden="true"></i></a>
-            <a href="#" class="tag_button"><i class="fa fa-tag" aria-hidden="true"></i></a>
           </div><!-- Admin buttons -->
-          <input type="text" class="alt_img" name="alt_img_<?php echo $image['idimage']; ?>" class="image-alt-admin hidden" value="<?=$image['alt_img'];?>"/>
+          <input type="text" class="image-alt-admin" name="alt_img_<?php echo $image['idimage']; ?>" class="image-alt-admin hidden" value="<?=$image['alt_img'];?>"/>
         <?php endif; ?>
 
 			</div>
