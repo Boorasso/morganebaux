@@ -105,7 +105,7 @@
             <a href="#" class="delete-image"><i class="fa fa-trash" aria-hidden="true"></i></a>
             <a href="#" class="tag_button"><i class="fa fa-tag" aria-hidden="true"></i></a>
           </div><!-- Admin buttons -->
-          <input type="text" class="alt_img" name="alt_img_<?php echo $image['idimage']; ?>" class="image-alt-admin hidden" value="<?=$image['alt_img'];?>"/>
+          <input type="text" class="image-alt-admin" name="alt_img_<?php echo $image['idimage']; ?>" class="image-alt-admin hidden" value="<?=$image['alt_img'];?>"/>
         <?php endif; ?>
 
 			</div>
