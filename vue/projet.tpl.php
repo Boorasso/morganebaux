@@ -12,9 +12,8 @@
             <button onclick="$('#image_1').click()"> <i class="fa fa-file-image-o" aria-hidden="true"></i> </button>
             <input type="file" name="image_1" id="image_1" class="image-input" style="display: none">
             <input type="hidden" name="MAX_FILE_SIZE" value="5242880" />
-            <a href="#" class="tag_button"><i class="fa fa-tag" aria-hidden="true"></i></a>
         </div>
-        <input type="text" id="alt_img" name="alt_img" class="image-alt-admin hidden" value="<?=isset($main_image_projet) ? $main_image_projet['alt_img'] : ''; ?>"/>
+        <input type="text" id="alt_img" name="alt_img" class="image-alt-admin" value="<?=isset($main_image_projet) ? $main_image_projet['alt_img'] : ''; ?>"/>
     </div><!--
 
   --><article class="project-description-admin-view">

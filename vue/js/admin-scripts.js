@@ -112,11 +112,6 @@ $(document).ready(function() {
     //PREVENT BUTTONS DEFAULT
     $('button:not([type=submit])').click(function(e) {e.preventDefault();});
 
-    //TOGGLE ALT FIELD
-    $('.tag_button').click(function() {
-        $('#alt_img').toggleClass("hidden");
-    });
-
     //TOGGLE SMALL BUTTONS
     $('.hide-buttons').click(function(e) {
         e.preventDefault();
