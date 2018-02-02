@@ -7,12 +7,10 @@
     <link rel="stylesheet" type="text/css" href="vue/css/reset.css">
     <link rel="stylesheet" href="vendor/font-awesome/css/font-awesome.min.css">
     <link href="https://fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet">
-    <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
     <link rel="stylesheet" type="text/css" href="vue/css/bootstrap.min.css">
     <link rel="stylesheet" type="text/css" href="vue/css/jquery.fancybox.css">
     <link rel="stylesheet" type="text/css" href="vue/css/main.css">
     <title>Morgane Baux | <?php echo $page_title; ?></title>
-    <script src="vendor/ckeditor/ckeditor.js"></script>
 </head>
 <body>
 <div class="content">
