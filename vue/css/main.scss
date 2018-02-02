@@ -374,7 +374,8 @@ div[class^="col-"] > a:hover,
 	display: flex;
 	justify-content: space-between;
 	align-items: center;
-	margin: 0 1.66%;
+	margin: 0 -5px;
+  padding: 0 1.66%;
 
 	a {
 		text-align: center;
@@ -395,8 +396,9 @@ div[class^="col-"] > a:hover,
 //                       PROJECT PAGE
 // -------------------------------------------------------
 
-section#projecttop{
-	margin: 10px;
+section#projecttop {
+	margin: -5px;
+  padding: 1.66%;
 	img {
 		width: 45%;
 		display: inline-block;

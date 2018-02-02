@@ -15,7 +15,7 @@ else {
 include_once "model/connexion_bdd.php";
 
 //3- Vérifier que la catégorie demandée existe dans la BDD
-// Récupération des id de catégogires en base
+// Récupération des id de catégories en base
 $query_categories = $bdd->prepare('SELECT categories.id_cat
                                   FROM categories
                                   ORDER BY categories.id_cat ASC;');

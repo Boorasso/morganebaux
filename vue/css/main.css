@@ -265,7 +265,8 @@ div[class^="col-"] > a:hover,
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin: 0 1.66%; }
+  margin: 0 -5px;
+  padding: 0 1.66%; }
   #separation a {
     text-align: center;
     text-transform: uppercase;
@@ -279,7 +280,8 @@ div[class^="col-"] > a:hover,
   display: inline-block; }
 
 section#projecttop {
-  margin: 10px; }
+  margin: -5px;
+  padding: 1.66%; }
   section#projecttop img {
     width: 45%;
     display: inline-block;
