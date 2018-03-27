@@ -1,18 +1,44 @@
-$( document ).ready(function() {
+// Objet chargé d'activé l'effet de hover et de forcer à taper deux fois sur les liens images sur écrans tactiles
+var tactileHoverEffect = {
+  links: '',
+  start: function () {
+    this.links = document.querySelectorAll('a.col');
+    
+    this.toggleHoverEffect = this.toggleHoverEffect.bind(this);
+    this.disableAllOtherHover = this.disableAllOtherHover.bind(this);
 
-  //Déclenchement de l'effet de hover en tactile
-  $('a.col').on("touchend", function (e) {
-    var link = $(this).last();
-    if (link.hasClass('hover')) {
+    for (var i = 0; i < this.links.length; i++) {
+      this.links[i].addEventListener('touchend', this.toggleHoverEffect);
+    }
+  },
+  toggleHoverEffect: function (e) {
+    var target = e.currentTarget;
+
+    if (target.classList.contains('hover')) {
       return true;
     }
     else {
-      link.addClass('hover');
-      $('a.col').not(this).removeClass('hover');
+      target.classList.add('hover');
+      this.disableAllOtherHover(target);
       e.preventDefault();
       return false;
     }
-  });
+  },
+  disableAllOtherHover: function (target) {
+    var allHoverLinks = document.querySelectorAll('a.col.hover');
+
+    for (var i = 0; i < allHoverLinks.length; i++) {
+      if (target != allHoverLinks[i]) {
+        allHoverLinks[i].classList.remove('hover');
+      }
+    }
+  }
+}  
+
+
+document.addEventListener('DOMContentLoaded',function(){
+
+  tactileHoverEffect.start();
 
   //Petit message en console pour la 3WA
   document.onmousedown = function(event) {
