@@ -1,4 +1,4 @@
-<div class="wrapper">
+<div class="wrapper appear">
 	<section id="mainsection"  class="grid">
 		<?php if ($login && $category_exists) : ?>
 			<a href="new_project.php"  class="col add-project">

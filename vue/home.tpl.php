@@ -1,4 +1,4 @@
-<div class="wrapper">
+<div class="wrapper appear">
 	<section id="topsection" class="grid">
 		<a href="categorie.php?ref=all"  class="col" style="background-image: url('vue/img/morgane-caprices-carre.jpg')">
 			<div class="colcontent"><p>Tous les projets</p></div>
@@ -19,7 +19,7 @@
 	<div class="line-separator"></div>
 </div>
 <div class="clearfix"></div>
-<div class="wrapper">
+<div class="wrapper appear">
 	<section id="mainsection"  class="grid">
 
 		<?php foreach ($derniers_projets as $projet): ?>

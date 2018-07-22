@@ -3,7 +3,7 @@
       <input type="hidden" name="ref-projet" value="<?=$ref_projet;?>">
 <?php endif; ?>
 
-<section id="projecttop"><!--Section Project Top-->
+<section id="projecttop" class="appear"><!--Section Project Top-->
 
   <?php if ($login) : ?>
     <!--Image Admin Display-->
@@ -70,7 +70,7 @@
 </div><!--Separation-->
 
 
-<div class="wrapper"> <!--Main Section-->
+<div class="wrapper appear"> <!--Main Section-->
 	<section id="mainsection"  class="grid">
 
 		<?php if ($ref_projet == 31) :?>
@@ -84,7 +84,7 @@
 		<?php foreach ($images_projet as $image): ?>
 
 			<div class="col-<?=$image['largeur_img'] ?>" style="background-image: url('vue/img/<?=$image['url_img']; ?>')" data-img-pos="<?=$image["pos_img"]; ?>" data-idimage="<?=$image["idimage"]; ?>">
-				<a href="vue/img/<?=$image['url_img']; ?>" data-fancybox="group" class="colcontent" title="<?=$image['alt_img'];?>"></a>
+				<a href="vue/img/<?=$image['url_img']; ?>" data-fancybox="group" class="collink" title="<?=$image['alt_img'];?>"></a>
 
         <?php if ($login) : ?>
           <div class="admin-icons"><!-- Admin buttons -->
