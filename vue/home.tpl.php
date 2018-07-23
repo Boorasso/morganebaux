@@ -1,5 +1,5 @@
 <div class="wrapper appear">
-	<section id="topsection" class="grid">
+	<section class="grid">
 		<a href="categorie.php?ref=all"  class="col" style="background-image: url('vue/img/morgane-caprices-carre.jpg')">
 			<div class="colcontent"><p>Tous les projets</p></div>
 		</a>
@@ -13,9 +13,9 @@
 	</section>
 </div>
 <div class="clearfix"></div>
-<div id="separation">
+<div class="separation">
 	<div class="line-separator"></div>
-	<a href="#">Dernièrement <i class="fa fa-caret-down" aria-hidden="true"></i></a>
+	<a href="#" class="separation__link">Dernièrement <i class="fa fa-caret-down" aria-hidden="true"></i></a>
 	<div class="line-separator"></div>
 </div>
 <div class="clearfix"></div>

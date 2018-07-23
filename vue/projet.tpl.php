@@ -63,9 +63,9 @@
 </section><!--Section Project Top-->
 
 
-<div id="separation" class="mobile-hide"><!--Separation-->
+<div class="separation mobile-hide"><!--Separation-->
 	<div class="line-separator"></div>
-	<a href="#mainsection">La suite <i class="fa fa-caret-down" aria-hidden="true"></i></a>
+	<a href="#mainsection" class="separation__link">La suite <i class="fa fa-caret-down" aria-hidden="true"></i></a>
 	<div class="line-separator"></div>
 </div><!--Separation-->
 

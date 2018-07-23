@@ -15,30 +15,29 @@
     <script src="vendor/ckeditor/ckeditor.js"></script>
 </head>
 <body>
-<div class="content">
-    <header>
+    <header class="main-header">
         <!-- Add proper home link -->
-        <a href="index.php" class="logo">
-            <img src="vue/img/morgane logo.svg" alt="Morgane Baux - Scénographe">
-            <h1>Morgane Baux <span class="linebreak">Scénographie</span><span>.</span></h1>
+        <a href="index.php" class="main-header__logo logo">
+            <img class="logo__image" src="vue/img/morgane logo.svg" alt="Morgane Baux - Scénographe">
+            <h1 class="site-heading">Morgane Baux <span class="site-heading__sub">Scénographie</span><span class="site-heading__point">.</span></h1>
             <?php if ($login) : ?>
                 <p class="rouge">Espace administration</p>
             <?php endif; ?>
         </a>
-        <nav>
+        <nav class="main-nav">
             <!-- Add proper links -->
             <div id="topnav">
-                <a href="index.php" class="mobile-hide">Home</a>
-                <a href="categorie.php?ref=1">Spect<span class="rouge">a</span>cle vivant</a>
-                <a href="categorie.php?ref=2">Ciné an<span class="bleugris">i</span>mation/Maquettes</a>
-                <a href="categorie.php?ref=3">E<span class="orange">x</span>po/événementiel</a>
-                <a href="categorie.php?ref=4">Déc<span class="violet">o</span>ration</a>
-                <a href="categorie.php?ref=5">Ima<span class="vert">g</span>es</a>
+                <a href="index.php" class="main-nav__link mobile-hide">Home</a>
+                <a href="categorie.php?ref=1" class="main-nav__link">Spect<span class="rouge">a</span>cle vivant</a>
+                <a href="categorie.php?ref=2" class="main-nav__link">Ciné an<span class="bleugris">i</span>mation/Maquettes</a>
+                <a href="categorie.php?ref=3" class="main-nav__link">E<span class="orange">x</span>po/événementiel</a>
+                <a href="categorie.php?ref=4" class="main-nav__link">Déc<span class="violet">o</span>ration</a>
+                <a href="categorie.php?ref=5" class="main-nav__link">Ima<span class="vert">g</span>es</a>
             </div>
             <div id="bottomnav">
-                <a href="actualite.php">Actualité</a>
-                <a href="contact.php">Contact/CV</a>
-                <p class="mobile-hide">copyright © Morgane Baux</p>
+                <a href="actualite.php" class="main-nav__link">Actualité</a>
+                <a href="contact.php" class="main-nav__link">Contact/CV</a>
+                <p class="main-nav__copyright mobile-hide">copyright © Morgane Baux</p>
             </div>
         </nav>
     </header><!--

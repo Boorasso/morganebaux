@@ -9,6 +9,5 @@
         <script src="vue/js/admin-scripts.js"></script>
     <?php endif; ?>
 </footer>
-</div>
 </body>
 </html>

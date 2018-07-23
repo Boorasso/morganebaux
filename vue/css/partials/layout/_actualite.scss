@@ -1,0 +1,34 @@
+// -------------------------------------------------------
+//                       ACTUALITES
+// -------------------------------------------------------
+section#actualite {
+  margin: auto;
+  max-width: 450px;
+  padding-top: 50px;
+  width: 80%;
+  @media (min-width: $md-min) {
+    margin: 0;
+    width: 100%;
+  }
+  img {
+    width: 100%;
+  }
+  h2 {
+    text-transform: uppercase;
+    font-size: 1.5em;
+    color: black;
+  }
+  p {
+    text-align: justify;
+    text-justify: inter-word;
+  }
+  span {
+    font-weight: bold;
+    &::before {
+      content: "- ";
+    }
+    &::after {
+      content: " : ";
+    }
+  }
+}

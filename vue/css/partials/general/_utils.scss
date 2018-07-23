@@ -1,0 +1,54 @@
+// -------------------------------------------------------
+//                    CLASSES UTILES
+// -------------------------------------------------------
+.mobile-hide {
+  @media (max-width: $sm-max) {
+    display: none !important;
+  }
+}
+
+.rouge {
+  color: $rouge;
+}
+
+.bleugris {
+  color: $bleugris;
+}
+
+.orange {
+  color: $orange;
+}
+
+.violet {
+  color: $violet;
+}
+
+.vert {
+  color: $vert;
+}
+
+.separation {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 0 1.66%;
+  &__link {
+    display: inline-block;
+    margin: 25px;
+    text-align: center;
+    text-transform: uppercase;
+    @media (min-width: $md-min) {
+      margin: 35px;
+    }
+    &:hover {
+      opacity: .7;
+    }
+  }
+}
+
+.line-separator {
+  height: 1px;
+  border-bottom: 2px dotted $basecolor;
+  width: 35%;
+  display: inline-block;
+}
